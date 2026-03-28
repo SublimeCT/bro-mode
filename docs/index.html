@@ -126,7 +126,22 @@
                 <span class="font-bold text-lg tracking-tight whitespace-nowrap" data-i18n="title">Bro Mode</span>
             </div>
             <div class="flex flex-wrap items-center gap-4">
-                <div id="lang-selector" class="flex flex-wrap gap-2 text-sm">
+                <!-- 移动端下拉框 -->
+                <div class="md:hidden relative flex-shrink-0">
+                    <select id="lang-select-mobile" class="appearance-none bg-white/5 border border-white/10 text-gray-300 py-1 pl-3 pr-8 rounded-md text-sm focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 cursor-pointer">
+                        <option value="en" class="bg-[#0A0A0B] text-white">🇺🇸 English</option>
+                        <option value="zh-CN" class="bg-[#0A0A0B] text-white">🇨🇳 简体中文</option>
+                        <option value="zh-TW" class="bg-[#0A0A0B] text-white">🇹🇼 繁体中文</option>
+                        <option value="ja" class="bg-[#0A0A0B] text-white">🇯🇵 日本語</option>
+                        <option value="ko" class="bg-[#0A0A0B] text-white">🇰🇷 한국어</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                </div>
+
+                <!-- PC端按钮 -->
+                <div id="lang-selector" class="hidden md:flex flex-wrap gap-2 text-sm">
                     <button class="lang-btn px-2 py-1 rounded-md text-gray-400 hover:text-white transition-colors border border-transparent hover:bg-white/5 whitespace-nowrap flex-shrink-0" data-lang="en">🇺🇸 English</button>
                     <button class="lang-btn px-2 py-1 rounded-md text-gray-400 hover:text-white transition-colors border border-transparent hover:bg-white/5 whitespace-nowrap flex-shrink-0" data-lang="zh-CN">🇨🇳 简体中文</button>
                     <button class="lang-btn px-2 py-1 rounded-md text-gray-400 hover:text-white transition-colors border border-transparent hover:bg-white/5 whitespace-nowrap flex-shrink-0" data-lang="zh-TW">🇹🇼 繁体中文</button>

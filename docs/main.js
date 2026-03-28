@@ -296,6 +296,15 @@ class I18nManager {
                 this.applyLanguage();
             });
         });
+
+        const mobileSelect = document.getElementById('lang-select-mobile');
+        if (mobileSelect) {
+            mobileSelect.addEventListener('change', (e) => {
+                this.currentLang = e.target.value;
+                this.updateActiveButton();
+                this.applyLanguage();
+            });
+        }
     }
 
     updateActiveButton() {
@@ -308,6 +317,11 @@ class I18nManager {
                 btn.classList.add('text-gray-400', 'border-transparent');
             }
         });
+
+        const mobileSelect = document.getElementById('lang-select-mobile');
+        if (mobileSelect) {
+            mobileSelect.value = this.currentLang;
+        }
     }
 
     applyLanguage() {

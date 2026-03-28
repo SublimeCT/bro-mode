@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "serve ./public -p 30184"
+    "serve": "serve ./docs -p 30184"
   },
   "keywords": [],
   "author": "",
