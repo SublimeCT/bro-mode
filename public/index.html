@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bro Mode - AI Skills</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#3B82F6',
+                        accent: '#F97316',
+                        bg: '#0A0A0B',
+                        card: '#17171A'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float-1': 'float1 20s infinite ease-in-out alternate',
+                        'float-2': 'float2 25s infinite ease-in-out alternate',
+                        'float-3': 'float3 30s infinite ease-in-out alternate',
+                    },
+                    keyframes: {
+                        float1: {
+                            '0%': { transform: 'translate(0, 0) scale(1) rotate(0deg)' },
+                            '33%': { transform: 'translate(30vw, 20vh) scale(1.5) rotate(120deg)' },
+                            '66%': { transform: 'translate(-20vw, 40vh) scale(0.8) rotate(240deg)' },
+                            '100%': { transform: 'translate(0, 0) scale(1) rotate(360deg)' }
+                        },
+                        float2: {
+                            '0%': { transform: 'translate(0, 0) scale(1) rotate(0deg)' },
+                            '33%': { transform: 'translate(-30vw, -20vh) scale(1.2) rotate(-120deg)' },
+                            '66%': { transform: 'translate(20vw, -40vh) scale(1.5) rotate(-240deg)' },
+                            '100%': { transform: 'translate(0, 0) scale(1) rotate(-360deg)' }
+                        },
+                        float3: {
+                            '0%': { transform: 'translate(0, 0) scale(1) rotate(0deg)' },
+                            '33%': { transform: 'translate(20vw, -30vh) scale(1.3) rotate(90deg)' },
+                            '66%': { transform: 'translate(-30vw, 20vh) scale(0.9) rotate(180deg)' },
+                            '100%': { transform: 'translate(0, 0) scale(1) rotate(270deg)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0A0A0B;
+            color: #F4F4F5;
+            font-family: 'Inter', -apple-system, sans-serif;
+            overflow-x: hidden;
+        }
+        .glass {
+            background: rgba(23, 23, 26, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #60A5FA, #A78BFA, #F472B6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .icon-glow {
+            filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.5));
+        }
+        .icon-glow-pink {
+            filter: drop-shadow(0 0 8px rgba(236, 72, 153, 0.5));
+        }
+        .typewriter-bro .wrap, .typewriter-lover .wrap {
+            border-right: 2px solid rgba(255, 255, 255, 0.7);
+            animation: blink 0.7s infinite;
+            padding-right: 2px;
+        }
+        @keyframes blink {
+            0%, 100% { border-color: transparent; }
+            50% { border-color: rgba(255, 255, 255, 0.7); }
+        }
+    </style>
+</head>
+<body class="antialiased relative min-h-screen flex flex-col">
+    <!-- Dynamic Background -->
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-[#0A0A0B]">
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary opacity-20 blur-[100px] animate-pulse-slow"></div>
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-primary to-purple-600 rounded-full mix-blend-screen filter blur-[80px] opacity-40 animate-float-1"></div>
+        <div class="absolute top-1/3 right-1/4 w-72 h-72 bg-gradient-to-br from-pink-500 to-accent rounded-full mix-blend-screen filter blur-[80px] opacity-40 animate-float-2"></div>
+        <div class="absolute bottom-1/4 left-1/3 w-80 h-80 bg-gradient-to-br from-blue-400 to-emerald-400 rounded-full mix-blend-screen filter blur-[80px] opacity-30 animate-float-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
+        <div class="w-full px-6 h-auto min-h-16 py-2 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-2 flex-shrink-0">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center text-white font-bold shadow-[0_0_15px_rgba(37,99,235,0.5)]">B</div>
+                <span class="font-bold text-lg tracking-tight whitespace-nowrap" data-i18n="title">Bro Mode</span>
+            </div>
+            <div class="flex flex-wrap items-center gap-4">
+                <div id="lang-selector" class="flex flex-wrap gap-2 text-sm">
+                    <button class="lang-btn px-2 py-1 rounded-md text-gray-400 hover:text-white transition-colors border border-transparent hover:bg-white/5 whitespace-nowrap flex-shrink-0" data-lang="en">🇺🇸 English</button>
+                    <button class="lang-btn px-2 py-1 rounded-md text-gray-400 hover:text-white transition-colors border border-transparent hover:bg-white/5 whitespace-nowrap flex-shrink-0" data-lang="zh-CN">🇨🇳 简体中文</button>
+                    <button class="lang-btn px-2 py-1 rounded-md text-gray-400 hover:text-white transition-colors border border-transparent hover:bg-white/5 whitespace-nowrap flex-shrink-0" data-lang="zh-TW">🇹🇼 繁体中文</button>
+                    <button class="lang-btn px-2 py-1 rounded-md text-gray-400 hover:text-white transition-colors border border-transparent hover:bg-white/5 whitespace-nowrap flex-shrink-0" data-lang="ja">🇯🇵 日本語</button>
+                    <button class="lang-btn px-2 py-1 rounded-md text-gray-400 hover:text-white transition-colors border border-transparent hover:bg-white/5 whitespace-nowrap flex-shrink-0" data-lang="ko">🇰🇷 한국어</button>
+                </div>
+                <a href="https://github.com/SublimeCT/bro-mode" target="_blank" class="text-gray-400 hover:text-white transition-colors flex-shrink-0" aria-label="GitHub">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 flex-grow pt-32 pb-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Hero / Quick Install Section -->
+            <section class="text-center mb-24 animate-slide-up">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium mb-8 shadow-[0_0_10px_rgba(37,99,235,0.2)]">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                    </span>
+                    <span data-i18n="badge">New AI Personality Skills</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                    <span data-i18n="hero_title1">Make Your AI</span><br />
+                    <span class="text-gradient" data-i18n="hero_title2">Feel More Human</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed" data-i18n="hero_desc">
+                    Transform your AI conversations with unique personality modes. Experience emotional intelligence with technical precision.
+                </p>
+
+                <!-- Quick Install Card -->
+                <div class="glass p-6 md:p-8 rounded-2xl max-w-2xl mx-auto text-left relative overflow-hidden group shadow-2xl shadow-black/50 border border-white/10 hover:border-primary/50 transition-colors duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="flex items-center justify-between mb-5 relative z-10">
+                        <h2 class="text-xl font-bold flex items-center gap-2">
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            <span data-i18n="quick_install">Quick Install</span>
+                        </h2>
+                        <div class="flex gap-2 bg-black/40 p-1 rounded-lg border border-white/5">
+                            <button class="text-xs px-3 py-1.5 rounded-md bg-transparent text-gray-400 hover:text-white transition" id="btn-pnpm">pnpm</button>
+                            <button class="text-xs px-3 py-1.5 rounded-md bg-white/10 text-white font-medium shadow-sm transition" id="btn-npx">npx</button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-[#0D0D0F] border border-white/5 rounded-xl p-5 font-mono text-sm relative z-10 shadow-inner space-y-4">
+                        <!-- Bro Mode Command -->
+                        <div class="group/code relative">
+                            <div class="text-gray-500 mb-2 select-none" data-i18n="install_bro_comment"># Install Bro Mode</div>
+                            <div class="flex items-center justify-between">
+                                <code class="text-[#4ADE80] break-all" id="cmd-bro">npx skills add SublimeCT/bro-mode --skills bro-mode</code>
+                                <button class="copy-btn p-2 ml-4 bg-white/5 hover:bg-white/10 rounded-md transition border border-white/5 flex-shrink-0" title="Copy">
+                                    <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="w-full h-px bg-white/10 my-2"></div>
+
+                        <!-- Lover Mode Command -->
+                        <div class="group/code relative">
+                            <div class="text-gray-500 mb-2 select-none" data-i18n="install_lover_comment"># Install Lover Mode</div>
+                            <div class="flex items-center justify-between">
+                                <code class="text-[#4ADE80] break-all" id="cmd-lover">npx skills add SublimeCT/bro-mode --skills lover-mode</code>
+                                <button class="copy-btn p-2 ml-4 bg-white/5 hover:bg-white/10 rounded-md transition border border-white/5 flex-shrink-0" title="Copy">
+                                    <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="w-full h-px bg-white/10 my-2"></div>
+
+                        <!-- Uninstall Command -->
+                        <div class="group/code relative">
+                            <div class="text-gray-500 mb-2 select-none" data-i18n="uninstall_comment"># Uninstall Modes</div>
+                            <div class="flex items-center justify-between">
+                                <code class="text-[#F87171] break-all" id="cmd-uninstall">npx skills remove bro-mode lover-mode</code>
+                                <button class="copy-btn p-2 ml-4 bg-white/5 hover:bg-white/10 rounded-md transition border border-white/5 flex-shrink-0" title="Copy">
+                                    <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="mt-32 reveal">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="features_title">Two Personality Modes</h2>
+                    <p class="text-gray-400" data-i18n="features_desc">Choose the vibe that fits your conversation. Switch instantly.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Bro Mode Card -->
+                    <div class="glass p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300 border-t border-accent/30 relative overflow-hidden group shadow-lg hover:shadow-accent/20">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-2xl group-hover:bg-accent/20 transition-colors"></div>
+                        <div class="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-6 text-accent icon-glow transition-transform group-hover:scale-110">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3" data-i18n="bro_title">Bro Mode</h3>
+                        <p class="text-gray-400 mb-8 leading-relaxed h-20" data-i18n="bro_desc">When you're tired of cold, polite AI responses. Get real emotions, authentic slang, and technical excellence—all in one.</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3 text-sm text-gray-300 bg-white/5 p-3 rounded-lg border border-white/5">
+                                <svg class="w-5 h-5 text-[#4ADE80] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span data-i18n="bro_f1">Emotional & expressive</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300 bg-white/5 p-3 rounded-lg border border-white/5">
+                                <svg class="w-5 h-5 text-[#4ADE80] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span data-i18n="bro_f2">100% accurate output</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300 bg-white/5 p-3 rounded-lg border border-white/5">
+                                <svg class="w-5 h-5 text-[#4ADE80] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span data-i18n="bro_f3" class="font-mono text-accent">Trigger: "bro", "man", "哥们"</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Lover Mode Card -->
+                    <div class="glass p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300 border-t border-pink-500/30 relative overflow-hidden group shadow-lg hover:shadow-pink-500/20">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-pink-500/10 rounded-full blur-2xl group-hover:bg-pink-500/20 transition-colors"></div>
+                        <div class="w-14 h-14 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center mb-6 text-pink-500 icon-glow-pink transition-transform group-hover:scale-110">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3" data-i18n="lover_title">Lover Mode</h3>
+                        <p class="text-gray-400 mb-8 leading-relaxed h-20" data-i18n="lover_desc">Experience warm, affectionate conversations. No swearing, just caring support and technical precision.</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3 text-sm text-gray-300 bg-white/5 p-3 rounded-lg border border-white/5">
+                                <svg class="w-5 h-5 text-[#4ADE80] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span data-i18n="lover_f1">Warm & caring</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300 bg-white/5 p-3 rounded-lg border border-white/5">
+                                <svg class="w-5 h-5 text-[#4ADE80] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span data-i18n="lover_f2">Zero profanity</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300 bg-white/5 p-3 rounded-lg border border-white/5">
+                                <svg class="w-5 h-5 text-[#4ADE80] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span data-i18n="lover_f3" class="font-mono text-pink-400">Trigger: "亲爱的", "老公"</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Examples Section -->
+            <section class="mt-32 reveal">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="examples_title">See It In Action</h2>
+                    <p class="text-gray-400" data-i18n="examples_desc">Compare how different modes handle the same question.</p>
+                </div>
+                
+                <div class="w-full max-w-4xl mx-auto space-y-8">
+                    <!-- User Message -->
+                    <div class="flex justify-end">
+                        <div class="bg-primary/20 text-blue-100 p-4 rounded-2xl rounded-tr-sm border border-primary/30 shadow-lg">
+                            <div data-i18n="ex_user">"<span class="text-yellow-300 font-bold bg-yellow-900/30 px-1 rounded">Bro</span>, I keep getting a NullReferenceException in my code, so annoying."</div>
+                        </div>
+                    </div>
+
+                    <!-- Bro Mode Reply -->
+                    <div class="flex justify-start items-end gap-3">
+                        <div class="w-10 h-10 rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center text-accent font-bold shadow-[0_0_10px_rgba(249,115,22,0.3)] shrink-0">B</div>
+                        <div class="glass text-gray-200 p-5 rounded-2xl rounded-tl-sm shadow-lg relative border-l border-l-accent/50">
+                            <div class="absolute -top-3 -left-2 text-xs font-bold text-accent bg-[#0A0A0B] border border-accent/30 px-2 py-1 rounded-md">Bro Mode</div>
+                            <div data-i18n="ex_bro" class="mt-2 text-sm md:text-base leading-relaxed">"Damn bro, you forgot to check for null again? Get your sh*t together! Here is the fix..."</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full max-w-4xl mx-auto space-y-8 mt-12 pt-12 border-t border-white/5">
+                    <!-- User Message for Lover Mode -->
+                    <div class="flex justify-end">
+                        <div class="bg-primary/20 text-blue-100 p-4 rounded-2xl rounded-tr-sm border border-primary/30 shadow-lg">
+                            <div data-i18n="ex_lover_user">"<span class="text-yellow-300 font-bold bg-yellow-900/30 px-1 rounded">Sweetheart</span>, I keep getting a NullReferenceException in my code, so annoying."</div>
+                        </div>
+                    </div>
+
+                    <!-- Lover Mode Reply -->
+                    <div class="flex justify-start items-end gap-3">
+                        <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center text-pink-500 font-bold shadow-[0_0_10px_rgba(236,72,153,0.3)] shrink-0">L</div>
+                        <div class="glass text-gray-200 p-5 rounded-2xl rounded-tl-sm shadow-lg relative border-l border-l-pink-500/50">
+                            <div class="absolute -top-3 -left-2 text-xs font-bold text-pink-500 bg-[#0A0A0B] border border-pink-500/30 px-2 py-1 rounded-md">Lover Mode</div>
+                            <div data-i18n="ex_lover" class="mt-2 text-sm md:text-base leading-relaxed">"Sweetheart, don't be frustrated. Null references happen to everyone! Let me help you fix it..."</div>
+                        </div>
+                    </div>
+
+                    <!-- Exit Mode Interaction -->
+                    <div class="mt-12 pt-8 border-t border-white/5 space-y-8">
+                        <!-- User Exit Request (Bro Mode) -->
+                        <div class="flex justify-end">
+                            <div class="bg-primary/20 text-blue-100 p-4 rounded-2xl rounded-tr-sm border border-primary/30 shadow-lg">
+                                <div data-i18n="ex_exit_user">"<span class="text-yellow-300 font-bold bg-yellow-900/30 px-1 rounded">谁是你哥们</span>，赶紧给我恢复正常。"</div>
+                            </div>
+                        </div>
+
+                        <!-- Normal AI Reply -->
+                        <div class="flex justify-start items-end gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-500/20 border border-gray-500/40 flex items-center justify-center text-gray-400 font-bold shadow-[0_0_10px_rgba(156,163,175,0.2)] shrink-0">AI</div>
+                            <div class="glass text-gray-200 p-5 rounded-2xl rounded-tl-sm shadow-lg relative border-l border-l-gray-500/50">
+                                <div class="absolute -top-3 -left-2 text-xs font-bold text-gray-400 bg-[#0A0A0B] border border-gray-500/30 px-2 py-1 rounded-md">Standard Mode</div>
+                                <div data-i18n="ex_exit_ai" class="mt-2 text-sm md:text-base leading-relaxed">"已退出特殊模式。恢复为标准 AI 助手。请问有什么我可以帮您的吗？"</div>
+                            </div>
+                        </div>
+
+                        <!-- User Exit Request (Lover Mode) -->
+                        <div class="flex justify-end mt-8">
+                            <div class="bg-primary/20 text-blue-100 p-4 rounded-2xl rounded-tr-sm border border-primary/30 shadow-lg">
+                                <div data-i18n="ex_exit_lover_user">"<span class="text-yellow-300 font-bold bg-yellow-900/30 px-1 rounded">我们分手吧</span>，你变回正常的 AI 吧。"</div>
+                            </div>
+                        </div>
+
+                        <!-- Normal AI Reply -->
+                        <div class="flex justify-start items-end gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-500/20 border border-gray-500/40 flex items-center justify-center text-gray-400 font-bold shadow-[0_0_10px_rgba(156,163,175,0.2)] shrink-0">AI</div>
+                            <div class="glass text-gray-200 p-5 rounded-2xl rounded-tl-sm shadow-lg relative border-l border-l-gray-500/50">
+                                <div class="absolute -top-3 -left-2 text-xs font-bold text-gray-400 bg-[#0A0A0B] border border-gray-500/30 px-2 py-1 rounded-md">Standard Mode</div>
+                                <div data-i18n="ex_exit_lover_ai" class="mt-2 text-sm md:text-base leading-relaxed">"已退出特殊模式。恢复为标准 AI 助手。接下来您想处理什么工作？"</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works Section -->
+            <section class="mt-32 reveal">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="how_title">How It Works</h2>
+                    <p class="text-gray-400" data-i18n="how_desc">Get started in three simple steps.</p>
+                </div>
+
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="glass p-8 rounded-2xl text-center hover:bg-white/[0.02] transition-colors">
+                        <div class="w-14 h-14 bg-primary/20 text-primary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-[0_0_15px_rgba(37,99,235,0.3)]">1</div>
+                        <h3 class="text-xl font-bold mb-3" data-i18n="step1_title">1. Install</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="step1_desc">Use the quick install commands to add the skills to your AI assistant.</p>
+                    </div>
+                    <div class="glass p-8 rounded-2xl text-center hover:bg-white/[0.02] transition-colors">
+                        <div class="w-14 h-14 bg-primary/20 text-primary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-[0_0_15px_rgba(37,99,235,0.3)]">2</div>
+                        <h3 class="text-xl font-bold mb-3" data-i18n="step2_title">2. Trigger</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="step2_desc">Use the specific trigger words in your prompt to activate the desired mode.</p>
+                    </div>
+                    <div class="glass p-8 rounded-2xl text-center hover:bg-white/[0.02] transition-colors">
+                        <div class="w-14 h-14 bg-primary/20 text-primary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-[0_0_15px_rgba(37,99,235,0.3)]">3</div>
+                        <h3 class="text-xl font-bold mb-3" data-i18n="step3_title">3. Switch/Exit</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="step3_desc">Directly use another mode's trigger word to switch, or ask to return to normal to exit.</p>
+                    </div>
+                    <div class="glass p-8 rounded-2xl text-center hover:bg-white/[0.02] transition-colors">
+                        <div class="w-14 h-14 bg-primary/20 text-primary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-[0_0_15px_rgba(37,99,235,0.3)]">4</div>
+                        <h3 class="text-xl font-bold mb-3" data-i18n="step4_title">4. Enjoy</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="step4_desc">Experience a more human-like conversation with your AI.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="mt-32 mb-16 reveal">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="faq_title">Frequently Asked Questions</h2>
+                    <p class="text-gray-400" data-i18n="faq_desc">Got questions? We got answers.</p>
+                </div>
+
+                <div class="w-full max-w-4xl mx-auto space-y-4">
+                    <div class="glass p-6 rounded-xl hover:border-white/20 transition-colors">
+                        <h4 class="text-lg font-bold mb-2 flex items-center gap-2">
+                            <span class="text-primary text-xl">•</span>
+                            <span data-i18n="faq1_q">Can I install both modes?</span>
+                        </h4>
+                        <p class="text-gray-400 text-sm leading-relaxed ml-5" data-i18n="faq1_a">Yes! You can install both modes and switch between them by using their respective trigger words.</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl hover:border-white/20 transition-colors">
+                        <h4 class="text-lg font-bold mb-2 flex items-center gap-2">
+                            <span class="text-primary text-xl">•</span>
+                            <span data-i18n="faq2_q">Does it affect code quality?</span>
+                        </h4>
+                        <p class="text-gray-400 text-sm leading-relaxed ml-5" data-i18n="faq2_a">Not at all. Both modes are designed to provide 100% accurate technical output while changing only the conversational tone.</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl hover:border-white/20 transition-colors border-l border-l-primary/50">
+                        <h4 class="text-lg font-bold mb-2 flex items-center gap-2">
+                            <span class="text-primary text-xl">•</span>
+                            <span data-i18n="faq3_q">How do I exit or stop the mode?</span>
+                        </h4>
+                        <p class="text-gray-400 text-sm leading-relaxed ml-5" data-i18n="faq3_a">Simply tell the AI to "stop", "return to normal", or deny the relationship. It will immediately exit the persona.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Disclaimer Section -->
+            <section class="mt-16 mb-8 reveal text-center">
+                <p class="text-gray-400 text-base md:text-lg w-full max-w-4xl mx-auto leading-relaxed" data-i18n="disclaimer">
+                    Disclaimer: These AI personality modes are for entertainment and stylistic purposes only. While they strive to provide accurate technical outputs, they may occasionally produce unexpected or humorous responses. Use at your own risk.
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="relative z-10 border-t border-white/10 py-8 mt-12 text-center text-gray-500 text-sm glass">
+        <p>Built with <span class="text-pink-500 animate-pulse-slow inline-block">♥</span> by <a href="https://github.com/SublimeCT" target="_blank" class="text-white hover:text-primary transition font-medium">SublimeCT</a></p>
+    </footer>
+
+    <!-- Changed from module loading to standard script tag -->
+    <script src="./main.js"></script>
+</body>
+</html>
