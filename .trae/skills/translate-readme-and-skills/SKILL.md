@@ -14,3 +14,4 @@ description: 当用户要求翻译 readme 或 skills 时启用, 将会把 skills
 - 如果 `skills/bro-mode/locales/zh-CN.md` 或 `README.zh-CN.md` 有改动, 则必须完整阅读它们, 禁止只翻译改动的部分
 - `skills/bro-mode/locales/*.md` 文件中禁止包含顶部的 `meta` 内容
 - `skills/bro-mode/locales/*.md` 和 `README.*.md` 中的内容必须与 `skills/bro-mode/locales/zh-CN.md` 和 `README.zh-CN.md` 中的内容一一对应
+- 禁止以任何形式执行任何命令或脚本
