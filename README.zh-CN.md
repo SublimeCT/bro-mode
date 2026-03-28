@@ -3,6 +3,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/SublimeCT/bro-mode/pulls)
 
+🏠 **项目主页**: [https://sublimect.github.io/bro-mode/](https://sublimect.github.io/bro-mode/)
+
 🇺🇸 [English](README.md) | 🇨🇳 [简体中文](README.zh-CN.md) | 🇭🇰 [繁體中文](README.zh-TW.md) | 🇯🇵 [日本語](README.jp.md) | 🇰🇷 [한국어](README.ko.md) | 🇪🇸 [Español](README.es.md) | 🇫🇷 [Français](README.fr.md) | 🇻🇳 [Tiếng Việt](README.vi.md)
 
 ---
