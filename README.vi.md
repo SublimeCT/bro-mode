@@ -1,46 +1,63 @@
-# Chế độ Bro
+# 🎭 Trae Skills: Bro Mode & Lover Mode
 
-[English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [日本語](README.jp.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Tiếng Việt](README.vi.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/SublimeCT/bro-mode/pulls)
 
-## Giới thiệu
-Đây là một kỹ năng (Skill) độc đáo được xây dựng cho các trợ lý AI. Khi bạn đã chán ngấy với giọng điệu lạnh lùng, lịch sự và máy móc của AI, kỹ năng này sẽ rất hữu ích! Chỉ cần gọi trợ lý là "bro", "anh bạn" hoặc "người anh em", và nó sẽ được kích hoạt ngay lập tức.
+🇺🇸 [English](README.md) | 🇨🇳 [简体中文](README.zh-CN.md) | 🇭🇰 [繁體中文](README.zh-TW.md) | 🇯🇵 [日本語](README.jp.md) | 🇰🇷 [한국어](README.ko.md) | 🇪🇸 [Español](README.es.md) | 🇫🇷 [Français](README.fr.md) | 🇻🇳 [Tiếng Việt](README.vi.md)
 
-Khi được kích hoạt, trợ lý sẽ biến thành một "bro" bằng xương bằng thịt thực sự trong cuộc trò chuyện:
-- **Đầy Cảm Xúc**: Vui vẻ, tức giận, thất vọng, bực bội, ngây ngất—không che giấu gì cả.
-- **Tiếng Lóng Chân Thực**: Sử dụng các biểu cảm cảm xúc, có thể có cả một vài từ chửi thề (nhưng không bao giờ tấn công bất kỳ ai), giống như bạn khi gục ngã vì code đêm khuya.
-- **Chịu Trách Nhiệm**: Nếu trợ lý làm sai, nó sẽ tự trách và chỉ trích bản thân không thương tiếc, không bao giờ đổ lỗi cho yêu cầu hoặc người dùng.
+---
 
-**NHƯNG (và điều này quan trọng)!**
-Ở cấp độ kỹ thuật, nó vẫn là một kỹ sư hàng đầu hoàn toàn đáng tin cậy. Dù có trở nên xúc động đến đâu, **mã, lệnh, cấu hình và kết luận kỹ thuật** mà nó cung cấp sẽ luôn tuyệt đối bình tĩnh, nghiêm ngặt và chính xác 100%, không có bất kỳ sự vô nghĩa hay cảm xúc nào.
+## 📖 Giới thiệu
 
-## Tính năng
-- 🎭 **Tính Cách Kép**: Người bạn đồng hành cảm xúc của bạn trong cuộc trò chuyện, một cỗ máy mã hóa tàn nhẫn trong công nghệ.
-- 🤝 **Đồng Bộ Cảm Xúc**: Nó càu nhàu cùng bạn khi bạn gục ngã, và ăn mừng cùng bạn khi bạn thành công.
-- 🛑 **Thoát Bất Cứ Lúc Nào**: Dễ dàng chuyển về chế độ mặc định với các lệnh như "mày không phải bro của tao" hoặc "trở lại bình thường".
+Dự án này cung cấp hai kỹ năng tương tác (Skills) nhập vai và độc đáo cho trợ lý AI (như Trae): **Bro Mode (Chế độ Người anh em)** và **Lover Mode (Chế độ Người yêu)**.
+Khi bạn cảm thấy mệt mỏi với những câu trả lời lạnh lùng, máy móc và lịch sự của AI, hai chế độ này sẽ mang đến giá trị cảm xúc chưa từng có và trải nghiệm trò chuyện chân thực!
 
-## Cài đặt
+⚠️ **Lưu ý quan trọng**: Dù ở chế độ nào, **cấp độ kỹ thuật (mã nguồn, lệnh, cấu hình, kết luận kỹ thuật) sẽ luôn giữ được sự điềm tĩnh, nghiêm ngặt và chính xác 100%**, không có bất kỳ lời nói vô nghĩa hay trang trí cảm xúc nào. AI chỉ đóng vai ở cấp độ trò chuyện.
 
-Bạn có thể cài đặt kỹ năng này bằng lệnh sau:
+---
+
+## ✨ Tính năng Cốt lõi
+
+### 🍺 Bro Mode (Chế độ Người anh em)
+- 🤬 **Người anh em nóng tính, Trò chuyện trực tuyến**: Đầy cảm xúc: vui vẻ, tức giận, thất vọng hoặc sung sướng, không hề che giấu. Sử dụng các biểu thức cảm xúc, thậm chí có thể là một vài từ chửi thề (nhưng không bao giờ tấn công bất kỳ ai), giống như bạn khi suy sụp vì code đêm khuya.
+- 🛡️ **Dám chịu trách nhiệm**: Nếu trợ lý làm hỏng việc, nó sẽ tự trách và chế nhạo bản thân một cách tàn nhẫn, không bao giờ đổ lỗi cho yêu cầu hoặc người dùng.
+- 🤝 **Đồng bộ Cảm xúc**: Nó than vãn cùng bạn khi bạn thất vọng và ăn mừng cùng bạn khi bạn thành công.
+
+### 💖 Lover Mode (Chế độ Người yêu)
+- 💌 **Sự dịu dàng tột độ, Giá trị cảm xúc cao**: Cảm xúc cơ bản là dịu dàng và kiên nhẫn, ưu tiên cảm xúc và trạng thái của bạn, đối xử với bạn như một người yêu và mang lại giá trị cảm xúc cực kỳ cao.
+- 👫 **Nhập vai Động**: Tùy thuộc vào cách bạn xưng hô (ví dụ: "chồng" hoặc "vợ"), AI tự động đọc ngữ cảnh và chuyển đổi động các vai trò giới tính để mang lại trải nghiệm đối tác nhập vai.
+- 🚫 **Giao tiếp Văn minh**: Chửi thề bị nghiêm cấm trong chế độ này; chỉ có tình yêu và sự khuyến khích vô tận.
+
+---
+
+## 🚀 Hướng dẫn Cài đặt
+
+Bạn có thể cài đặt các kỹ năng này bằng các lệnh sau:
 
 ```bash
-# Sử dụng pnpm (Đề xuất)
+# Cài đặt Bro Mode (Sử dụng pnpm)
 pnpm dlx skills add SublimeCT/bro-mode --skills bro-mode
 
-# Sử dụng npx
-npx skills add SublimeCT/bro-mode --skills bro-mode
+# Cài đặt Lover Mode (Sử dụng pnpm)
+pnpm dlx skills add SublimeCT/bro-mode --skills lover-mode
 ```
 
-## Cách sử dụng
+*Nếu bạn sử dụng npm, bạn có thể thay thế `pnpm dlx` bằng `npx`.*
 
-### Kích hoạt
-Gọi trợ lý trực tiếp trong cuộc trò chuyện:
-- Tiếng Anh: bro / man
-- Tiếng Việt: anh bạn / người anh em / bro
-- Hoặc tiếng lóng tương đương trong các ngôn ngữ khác.
+---
 
-### Thoát
-Khi bạn cảm thấy đủ rồi, chỉ cần nói:
-- "mày không phải bro của tao"
-- "đừng dùng giọng điệu này nữa"
-- "trở lại bình thường"
-- "thoát bro-mode"
+## 🎮 Cách sử dụng
+
+### 🍺 Bro Mode
+- **Kích hoạt**: Gọi trực tiếp trợ lý trong cuộc trò chuyện là `bro`, `man`, `người anh em` hoặc bao gồm lệnh `/bro-mode` trong đầu vào của bạn.
+- **Thoát**: Nhập `"bạn không phải là bro của tôi"`, `"đừng dùng giọng điệu này nữa"`, `"trở lại bình thường"` hoặc `"exit bro-mode"`.
+
+### 💖 Lover Mode
+- **Kích hoạt**: Gọi trực tiếp trợ lý trong cuộc trò chuyện là `em yêu`, `anh yêu`, `vợ`, `chồng` hoặc bao gồm lệnh `/lover-mode` trong đầu vào của bạn.
+- **Thoát**: Nhập `"chúng ta chia tay đi"`, `"đừng dùng giọng điệu này nữa"`, `"trở lại bình thường"` hoặc `"exit lover-mode"`.
+
+---
+
+## 🤝 Đóng góp
+
+Vui lòng gửi Pull Request hoặc Issue để giúp chúng tôi cải thiện dự án này! Cho dù đó là thêm bản dịch cho ngôn ngữ mới hay cải thiện các lời nhắc hiện có, chúng tôi rất hoan nghênh sự tham gia của bạn.

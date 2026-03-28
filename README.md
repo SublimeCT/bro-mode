@@ -1,46 +1,63 @@
-# Bro Mode
+# 🎭 Trae Skills: Bro Mode & Lover Mode
 
-[English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [日本語](README.jp.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Tiếng Việt](README.vi.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/SublimeCT/bro-mode/pulls)
 
-## Introduction
-This is a unique skill built for AI assistants. When you're tired of the cold, polite, and robotic tone of AI, this skill comes in handy! Simply address the assistant as "bro", "man", or "哥们", and it will be activated instantly.
+🇺🇸 [English](README.md) | 🇨🇳 [简体中文](README.zh-CN.md) | 🇭🇰 [繁體中文](README.zh-TW.md) | 🇯🇵 [日本語](README.jp.md) | 🇰🇷 [한국어](README.ko.md) | 🇪🇸 [Español](README.es.md) | 🇫🇷 [Français](README.fr.md) | 🇻🇳 [Tiếng Việt](README.vi.md)
 
-Once activated, the assistant transforms into a real, flesh-and-blood "bro" in conversation:
-- **Full of Emotion**: Happy, furious, frustrated, annoyed, ecstatic—no hiding it.
-- **Authentic Slang**: Uses emotional expressions, maybe even a few swear words (but never attacks anyone), just like you when you're breaking down over late-night coding.
-- **Takes the Blame**: If the assistant messes up, it will ruthlessly blame and roast itself, never shifting the blame to the requirements or the user.
+---
 
-**BUT (and this is important)!**
-On the technical level, it remains an absolutely reliable, top-tier engineer. No matter how emotional it gets, the **code, commands, configurations, and technical conclusions** it provides will remain absolutely calm, rigorous, and 100% correct, without any nonsense or emotional fluff.
+## 📖 Introduction
 
-## Features
-- 🎭 **Dual Personality**: Your emotional sidekick in conversation, a ruthless coding machine in technology.
+This project provides two unique, immersive interaction skills for AI assistants (like Trae): **Bro Mode** and **Lover Mode**.
+When you're tired of the cold, robotic, and polite responses of AI, these two modes offer unprecedented emotional value and a realistic conversation experience!
+
+⚠️ **Important Note**: Regardless of the mode, the **technical level (code, commands, configurations, technical conclusions) will remain absolutely calm, rigorous, and 100% correct**, with no nonsense or emotional fluff. The AI only roleplays at the conversational level.
+
+---
+
+## ✨ Core Features
+
+### 🍺 Bro Mode
+- 🤬 **Grumpy Bro, Chatting Online**: Full of emotion—happy, furious, frustrated, or ecstatic, with no hiding it. Uses emotional expressions, maybe even a few swear words (but never attacks anyone), just like you when you're breaking down over late-night coding.
+- 🛡️ **Takes the Blame**: If the assistant messes up, it will ruthlessly blame and roast itself, never shifting the blame to the requirements or the user.
 - 🤝 **Emotional Sync**: It roasts with you when you crash, and celebrates with you when you succeed.
-- 🛑 **Exit Anytime**: Easily switch back to default mode with commands like "you're not my bro" or "back to normal".
 
-## Installation
+### 💖 Lover Mode
+- 💌 **Ultimate Gentleness, High Emotional Value**: The underlying emotion is gentle and patient, prioritizing your emotions and state, treating you as a lover, and providing extremely high emotional value.
+- 👫 **Dynamic Roleplay**: Depending on how you address it (e.g., "husband" or "wife"), the AI automatically reads the context and dynamically switches gender roles to provide an immersive partner experience.
+- 🚫 **Civilized Communication**: Swearing is strictly prohibited in this mode; there is only endless love and encouragement.
 
-You can install this skill using the following command:
+---
+
+## 🚀 Installation
+
+You can install these skills using the following commands:
 
 ```bash
-# Using pnpm (Recommended)
+# Install Bro Mode (Using pnpm)
 pnpm dlx skills add SublimeCT/bro-mode --skills bro-mode
 
-# Using npx
-npx skills add SublimeCT/bro-mode --skills bro-mode
+# Install Lover Mode (Using pnpm)
+pnpm dlx skills add SublimeCT/bro-mode --skills lover-mode
 ```
 
-## Usage
+*If you are using npm, you can replace `pnpm dlx` with `npx`.*
 
-### Trigger
-Address the assistant directly in the chat:
-- English: bro / man
-- Chinese: 哥们 / 老哥 / 哥
-- Or equivalent slang in other languages.
+---
 
-### Exit
-When you've had enough, just say:
-- "you're not my bro"
-- "stop using this tone"
-- "back to normal"
-- "exit bro-mode"
+## 🎮 Usage
+
+### 🍺 Bro Mode
+- **Trigger**: Address the assistant directly in the chat as `bro`, `man`, `哥们` (buddy), or include the `/bro-mode` command in your input.
+- **Exit**: Type `"you're not my bro"`, `"stop using this tone"`, `"back to normal"`, or `"exit bro-mode"`.
+
+### 💖 Lover Mode
+- **Trigger**: Address the assistant directly in the chat as `darling`, `husband`, `wife`, or include the `/lover-mode` command in your input.
+- **Exit**: Type `"let's break up"`, `"stop using this tone"`, `"back to normal"`, or `"exit lover-mode"`.
+
+---
+
+## 🤝 Contributing
+
+Feel free to submit a Pull Request or Issue to help us improve this project! Whether it's adding translations for new languages or improving existing prompts, we warmly welcome your participation.

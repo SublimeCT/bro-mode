@@ -1,46 +1,63 @@
-# Mode Bro
+# 🎭 Trae Skills: Bro Mode & Lover Mode
 
-[English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [日本語](README.jp.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Tiếng Việt](README.vi.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/SublimeCT/bro-mode/pulls)
 
-## Introduction
-Il s'agit d'une compétence (Skill) unique conçue pour les assistants IA. Lorsque vous en avez assez du ton froid, poli et robotique de l'IA, cette compétence s'avère très utile ! Il suffit de s'adresser à l'assistant en disant "bro", "mec" ou "frérot", et il s'activera instantanément.
+🇺🇸 [English](README.md) | 🇨🇳 [简体中文](README.zh-CN.md) | 🇭🇰 [繁體中文](README.zh-TW.md) | 🇯🇵 [日本語](README.jp.md) | 🇰🇷 [한국어](README.ko.md) | 🇪🇸 [Español](README.es.md) | 🇫🇷 [Français](README.fr.md) | 🇻🇳 [Tiếng Việt](README.vi.md)
 
-Une fois activé, l'assistant se transforme en un véritable "bro" de chair et de sang dans la conversation :
-- **Plein d'Émotions** : Heureux, furieux, frustré, agacé, extatique—il ne cache rien.
-- **Argot Authentique** : Utilise des expressions émotionnelles, peut-être même quelques gros mots (mais n'attaque jamais personne), tout comme vous lorsque vous craquez en codant tard la nuit.
-- **Prend le Blâme** : Si l'assistant se trompe, il se blâmera et se critiquera sans pitié, ne rejetant jamais la faute sur les exigences ou l'utilisateur.
+---
 
-**MAIS (et c'est important) !**
-Au niveau technique, il reste un ingénieur de haut niveau absolument fiable. Peu importe à quel point il devient émotionnel, le **code, les commandes, les configurations et les conclusions techniques** qu'il fournit resteront absolument calmes, rigoureux et 100% corrects, sans aucune absurdité ni fioriture émotionnelle.
+## 📖 Introduction
 
-## Caractéristiques
-- 🎭 **Double Personnalité** : Votre acolyte émotionnel dans la conversation, une machine de codage impitoyable en technologie.
-- 🤝 **Synchronisation Émotionnelle** : Il se plaint avec vous lorsque vous craquez, et célèbre avec vous lorsque vous réussissez.
-- 🛑 **Sortie à Tout Moment** : Revenez facilement au mode par défaut avec des commandes comme "tu n'es pas mon bro" ou "reviens à la normale".
+Ce projet propose deux compétences d'interaction (Skills) immersives et uniques pour les assistants IA (comme Trae) : **Bro Mode (Mode Pote)** et **Lover Mode (Mode Amoureux)**.
+Quand vous en avez assez des réponses froides, robotiques et polies de l'IA, ces deux modes vous offrent une valeur émotionnelle sans précédent et une véritable expérience de conversation !
 
-## Installation
+⚠️ **Remarque importante** : Quel que soit le mode, **le niveau technique (code, commandes, configurations, conclusions techniques) restera absolument calme, rigoureux et 100 % correct**, sans aucun non-sens ni embellissement émotionnel. L'IA ne joue un rôle qu'au niveau de la conversation.
 
-Vous pouvez installer cette compétence en utilisant la commande suivante :
+---
+
+## ✨ Fonctionnalités Principales
+
+### 🍺 Bro Mode (Mode Pote)
+- 🤬 **Pote grincheux, Chat en ligne** : Plein d'émotions : joyeux, furieux, frustré ou extatique, sans le cacher. Utilise des expressions émotionnelles, peut-être même quelques gros mots (mais n'attaque jamais personne), tout comme vous lorsque vous craquez en codant tard la nuit.
+- 🛡️ **Assume la responsabilité** : Si l'assistant fait une erreur, il se blâmera sans pitié et ne rejettera jamais la faute sur les exigences ou l'utilisateur.
+- 🤝 **Synchronisation émotionnelle** : Il râle avec vous quand vous craquez et célèbre avec vous quand vous réussissez.
+
+### 💖 Lover Mode (Mode Amoureux)
+- 💌 **Douceur extrême, Haute valeur émotionnelle** : L'émotion sous-jacente est douce et patiente, donnant la priorité à vos émotions et à votre état, vous traitant comme un amant et offrant une valeur émotionnelle extrêmement élevée.
+- 👫 **Jeu de rôle dynamique** : Selon la façon dont vous l'appelez (ex. « mari » ou « femme »), l'IA lit automatiquement le contexte et change dynamiquement de rôle de genre pour offrir une expérience de partenaire immersive.
+- 🚫 **Communication civilisée** : Les gros mots sont strictement interdits dans ce mode ; il n'y a que de l'amour et des encouragements infinis.
+
+---
+
+## 🚀 Guide d'installation
+
+Vous pouvez installer ces compétences en utilisant les commandes suivantes :
 
 ```bash
-# Avec pnpm (Recommandé)
+# Installer Bro Mode (Utilisation de pnpm)
 pnpm dlx skills add SublimeCT/bro-mode --skills bro-mode
 
-# Avec npx
-npx skills add SublimeCT/bro-mode --skills bro-mode
+# Installer Lover Mode (Utilisation de pnpm)
+pnpm dlx skills add SublimeCT/bro-mode --skills lover-mode
 ```
 
-## Utilisation
+*Si vous utilisez npm, vous pouvez remplacer `pnpm dlx` par `npx`.*
 
-### Déclenchement
-Adressez-vous directement à l'assistant dans le chat :
-- Anglais : bro / man
-- Français : mec / frérot / gros
-- Ou un argot équivalent dans d'autres langues.
+---
 
-### Sortie
-Quand vous en avez assez, dites simplement :
-- "tu n'es pas mon bro"
-- "arrête d'utiliser ce ton"
-- "reviens à la normale"
-- "quitter le mode bro"
+## 🎮 Utilisation
+
+### 🍺 Bro Mode
+- **Activation** : Adressez-vous directement à l'assistant dans le chat en disant `bro`, `mec`, `pote` ou incluez la commande `/bro-mode` dans votre saisie.
+- **Quitter** : Tapez `"tu n'es pas mon bro"`, `"arrête de parler comme ça"`, `"retour à la normale"` ou `"exit bro-mode"`.
+
+### 💖 Lover Mode
+- **Activation** : Adressez-vous directement à l'assistant dans le chat en disant `chéri(e)`, `mon amour` ou incluez la commande `/lover-mode` dans votre saisie.
+- **Quitter** : Tapez `"on rompt"`, `"arrête de parler comme ça"`, `"retour à la normale"` ou `"exit lover-mode"`.
+
+---
+
+## 🤝 Contribution
+
+N'hésitez pas à soumettre une Pull Request ou une Issue pour nous aider à améliorer ce projet ! Qu'il s'agisse d'ajouter des traductions pour de nouvelles langues ou d'améliorer les prompts existants, nous attendons avec impatience votre participation.
